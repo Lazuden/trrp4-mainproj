@@ -1,0 +1,5 @@
+﻿server_uri=192.168.1.51:5000
+rabbitMQ_ip=192.168.1.34
+javaw=C:\Program Files\ojdkbuild\java-14-openjdk-14.0.2-1\bin\javaw.exe
+pixels-server-1.0-SNAPSHOT-jar-with-dependencies.jar=C:\Users\lazuk\Desktop\trrp4\repos\pixels-server-1.0-SNAPSHOT-jar-with-dependencies.jar
+dbPath=C:\Users\lazuk\Desktop\trrp4\repos\server\database.sqlite

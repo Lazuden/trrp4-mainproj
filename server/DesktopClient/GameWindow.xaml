@@ -1,0 +1,43 @@
+﻿<Window x:Class="DesktopClient.GameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesktopClient"
+        xmlns:wpfext="clr-namespace:WPFExtensions.Controls;assembly=WPFExtensions"
+        mc:Ignorable="d"
+        Title="Пиксели" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+    <DockPanel>
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <ToolBarTray Grid.Column="0" IsLocked="True">
+                <ToolBar x:Name="_toolBar">
+                </ToolBar>
+            </ToolBarTray>
+            <ToolBarTray Grid.Column="1" IsLocked="True">
+                <ToolBar>
+                    <Button Content="{Binding Address}"
+                            Click="AddressButton_Click"
+                            ToolTip="Нажмите чтобы скопировать"
+                            Height="32"/>
+                </ToolBar>
+            </ToolBarTray>
+        </Grid>
+        <wpfext:ZoomControl x:Name="_zoomControl"
+                            MouseLeftButtonDown="ZoomControl_MouseLeftButtonDown"
+                            Background="LightSkyBlue"
+                            MinZoom="1.0"
+                            MaxZoom="20.0"
+                            Mode="Original">
+            <local:BitmapCanvas x:Name="_bitmapCanvas"
+                                MouseLeftButtonDown="BitmapCanvas_MouseLeftButtonDown"
+                                MouseMove="BitmapCanvas_MouseMove"
+                                Background="Transparent"
+                                RenderOptions.BitmapScalingMode="NearestNeighbor">
+            </local:BitmapCanvas>
+        </wpfext:ZoomControl>
+    </DockPanel>
+</Window>

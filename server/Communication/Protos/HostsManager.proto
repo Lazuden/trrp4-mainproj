@@ -1,0 +1,22 @@
+﻿syntax = "proto3";
+
+service HostsManager {
+  rpc GetHosts(EmptyParams) returns (Hosts);
+  rpc SetHost(Host) returns (SetHostResponse);
+}
+
+message Hosts {
+  repeated Host hosts = 1;
+}
+
+message Host {
+ string Name = 1;
+ string Address = 2;
+ int32 Ping = 3;
+}
+
+message SetHostResponse {
+  string errors = 1;
+}
+
+message EmptyParams {}
